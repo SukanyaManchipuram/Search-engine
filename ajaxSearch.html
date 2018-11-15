@@ -1,0 +1,45 @@
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="search.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function show(str) {
+  if (str.length==0) { 
+    document.getElementById("demo").innerHTML="";
+    //document.getElementById("demo").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("demo").innerHTML=this.responseText;
+      document.getElementById("demo").style.border="1px solid #3a1535";
+    }
+  }
+  xmlhttp.open("GET","search.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body >
+<center>
+ <div id="search" >
+  <h2 align="center">AJAX PHP LIVE SEARCH</h2>
+   <p>Type to go to your favourite sites for watching videos online or any of the shopping sites</p>
+
+
+  <form>
+     <input type="text" size="50" onkeyup="show(this.value)">
+      <div id="demo"></div>
+  </form>
+ </div>
+</center>
+</body>
+</html>

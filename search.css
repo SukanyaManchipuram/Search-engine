@@ -1,0 +1,24 @@
+body
+{
+	
+   background-image:url("http://www.greysuitsites.com/wp-content/uploads/2014/04/463386377.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position:center;
+}
+p{
+	font-family:"Comic Sans MS";
+	font-size:20px;
+}
+#search{
+	font-size:20px;
+	color:"black";
+}
+#demo{
+	background-color:white;
+	width:40%;
+}
+a{
+	color:"Black";
+}
+
